@@ -41,7 +41,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     display_name = db.Column(db.String(120))
     fb_id = db.Column(db.String(30), unique=True)
-    pastes = db.relationship(Paste, lazy='dynamic', backref='user')
+    pastes = db.relationship('Paste', lazy='dynamic', backref='user')
 
 
 @app.before_request
